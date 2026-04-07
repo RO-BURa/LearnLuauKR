@@ -1256,7 +1256,8 @@
 </span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="c1">-- 지역 A 끝</span>
 </span></code></pre></div></p>
 <h3 id="_8">지역변수</h3>
-<p>지역변수란 지역변수를 생성하면 그 지역과 내부 지역에서만 사용할수있고 외부지역에서는 사용을 못하는 변수임</p>
+<p>지역변수란 지역변수를 선언하면 그 지역과 내부 지역에서만 사용할수있고 외부지역에서는 접근을 못하는 변수임</p>
+<p>내부 지역의 지역변수는 가져올수없고 외부 지역 또는 자기 지역변수만 접근할수있음</p>
 <p><strong>이때 지역변수는 환경에 저장되지않음</strong></p>
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c1">-- 지역 A (기본지역)</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
@@ -1359,6 +1360,69 @@
 </span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="c1">-- true</span>
 </span></code></pre></div></p>
 <h2 id="_10">비교문</h2>
+<p>비교문은 위에서 배운 비교 연산자와 궁합이 아아주우ㅜㅜ 좋음</p>
+<p>먼저 기본 문법은
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kr">if</span><span class="w"> </span><span class="o">&lt;</span><span class="err">조건</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">코드</span><span class="o">&gt;</span>
+</span><span id="__span-24-3"><a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="kr">end</span>
+</span></code></pre></div>
+이고
+&lt;조건&gt;이 (nil 또는 false)가 아니면 &lt;코드&gt;를 실행함</p>
+<p>예시:
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="kr">if</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-25-2"><a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">    </span><span class="c1">-- 실행됨</span>
+</span><span id="__span-25-3"><a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="kr">end</span>
+</span><span id="__span-25-4"><a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="kr">if</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-25-5"><a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">    </span><span class="c1">-- 실행됨</span>
+</span><span id="__span-25-6"><a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="kr">end</span>
+</span><span id="__span-25-7"><a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="kr">if</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-25-8"><a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">    </span><span class="c1">-- 실행 안됨</span>
+</span><span id="__span-25-9"><a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="kr">end</span>
+</span><span id="__span-25-10"><a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="kr">if</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-25-11"><a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">    </span><span class="c1">-- 실행 안됨</span>
+</span><span id="__span-25-12"><a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="kr">end</span>
+</span><span id="__span-25-13"><a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="kr">if</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-25-14"><a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="w">    </span><span class="c1">-- 3은 5보다 크지 않기 때문에 실행안됨</span>
+</span><span id="__span-25-15"><a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="kr">end</span>
+</span></code></pre></div></p>
+<p>비교문엔 else를 추가할수 있음
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="kr">if</span><span class="w"> </span><span class="o">&lt;</span><span class="err">조건</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-26-2"><a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">코드</span><span class="mf">1</span><span class="o">&gt;</span>
+</span><span id="__span-26-3"><a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="kr">else</span>
+</span><span id="__span-26-4"><a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">코드</span><span class="mf">2</span><span class="o">&gt;</span>
+</span><span id="__span-26-5"><a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="kr">end</span>
+</span></code></pre></div></p>
+<p>&lt;조건&gt;이 맞으면 &lt;코드1&gt;을 실행하고 아니면 &lt;코드2&gt;를 실행함</p>
+<p>예시:
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="kr">if</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-27-2"><a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">    </span><span class="c1">-- 실행 안됨</span>
+</span><span id="__span-27-3"><a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="kr">else</span>
+</span><span id="__span-27-4"><a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="c1">-- 실행됨</span>
+</span><span id="__span-27-5"><a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="kr">end</span>
+</span></code></pre></div></p>
+<p>비교문에 elseif도 추가할수있음</p>
+<p>elseif는 또 다른 조건을 추가하는 문법임</p>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="kr">if</span><span class="w"> </span><span class="o">&lt;</span><span class="err">조건</span><span class="mf">1</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-28-2"><a id="__codelineno-28-2" name="__codelineno-28-2" href="#__codelineno-28-2"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">코드</span><span class="mf">1</span><span class="o">&gt;</span>
+</span><span id="__span-28-3"><a id="__codelineno-28-3" name="__codelineno-28-3" href="#__codelineno-28-3"></a><span class="kr">elseif</span><span class="w"> </span><span class="o">&lt;</span><span class="err">조건</span><span class="mf">2</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-28-4"><a id="__codelineno-28-4" name="__codelineno-28-4" href="#__codelineno-28-4"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">코드</span><span class="mf">2</span><span class="o">&gt;</span>
+</span><span id="__span-28-5"><a id="__codelineno-28-5" name="__codelineno-28-5" href="#__codelineno-28-5"></a><span class="w">    </span><span class="c1">-- elseif를 더 추가하거나 else도 추가할수있음</span>
+</span><span id="__span-28-6"><a id="__codelineno-28-6" name="__codelineno-28-6" href="#__codelineno-28-6"></a><span class="w">    </span><span class="c1">-- else</span>
+</span><span id="__span-28-7"><a id="__codelineno-28-7" name="__codelineno-28-7" href="#__codelineno-28-7"></a><span class="kr">end</span>
+</span></code></pre></div>
+<p>먼저 &lt;조건1&gt;을 확인하고 맞으면 &lt;코드1&gt;을 실행함
+만약 &lt;조건1&gt;이 안맞으면 다음 조건을 확인하고 그 조건이 맞으면 그 조건의 코드를 실행함 아니면 다음 조건으로 넘어감</p>
+<p>예시:
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="kr">if</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a><span class="w">    </span><span class="c1">-- 실행 안됨</span>
+</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="kr">elseif</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="w">    </span><span class="c1">-- 실행안됨</span>
+</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a><span class="kr">elseif</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="kr">then</span>
+</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="w">    </span><span class="c1">-- 실행됨</span>
+</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="kr">else</span>
+</span><span id="__span-29-8"><a id="__codelineno-29-8" name="__codelineno-29-8" href="#__codelineno-29-8"></a><span class="w">    </span><span class="c1">-- 실행안됨</span>
+</span><span id="__span-29-9"><a id="__codelineno-29-9" name="__codelineno-29-9" href="#__codelineno-29-9"></a><span class="kr">end</span>
+</span></code></pre></div></p>
 <h2 id="_11">반복문</h2>
 <div class="admonition info">
 <p class="admonition-title">참고</p>
