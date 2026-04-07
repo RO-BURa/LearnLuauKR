@@ -1866,7 +1866,7 @@
 <p>함수개체 뒤에 ()을 붙히면 실행할수있음</p>
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
 </span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">dd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">()</span><span class="w"> </span><span class="c1">-- 지금 내부 코드를 저장한거임</span>
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">    </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="c1">-- 내부 코드</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="w">    </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="c1">-- 내부 코드 (a에 1을 더하는 코드)</span>
 </span><span id="__span-32-4"><a id="__codelineno-32-4" name="__codelineno-32-4" href="#__codelineno-32-4"></a><span class="kr">end</span>
 </span><span id="__span-32-5"><a id="__codelineno-32-5" name="__codelineno-32-5" href="#__codelineno-32-5"></a>
 </span><span id="__span-32-6"><a id="__codelineno-32-6" name="__codelineno-32-6" href="#__codelineno-32-6"></a><span class="c1">-- 저장한 코드를 실행</span>
@@ -1877,7 +1877,7 @@
 </span><span id="__span-32-11"><a id="__codelineno-32-11" name="__codelineno-32-11" href="#__codelineno-32-11"></a><span class="c1">-- a가 결과적으로 3이 됨</span>
 </span></code></pre></div>
 <h3 id="_12">매개변수</h3>
-<p>함수에는 매개변수라는 값을 넣어줄수 있음 매개변수는 함수에서 내부적으로 사용할수있는 변수임
+<p>함수에는 매개변수라는 값을 넣어줄수 있음 매개변수는 함수에서 내부적으로 사용할수있는 지역 변수임
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
 </span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">dd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">n</span><span class="p">,</span><span class="w"> </span><span class="nv">asdf</span><span class="p">,</span><span class="w"> </span><span class="nv">dddd</span><span class="p">,</span><span class="w"> </span><span class="nv">d</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 매개변수로 n을 받는거임 (괄호에 변수 이름을 넣으면 됨) (쉼표를 넣으면 여러개를 받을수있음)</span>
 </span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="w">    </span><span class="c1">-- n은 첫번째 매개변수임</span>
