@@ -1213,7 +1213,7 @@
 <h3 id="nil">nil</h3>
 <p>nil은 비어있는 값 (다른 언어에선 null이라고 생각하면됨) (Luau엔 다른 언어랑 다르게 undefined가 없음)</p>
 <h3 id="number">number</h3>
-<p>number은 숫자 (위 변수에서 설명한거랑 같음)</p>
+<p>number은 숫자</p>
 <h3 id="boolean">boolean</h3>
 <p>boolean은 참/거짓 (true와 false)</p>
 <h3 id="string">string</h3>
@@ -1230,7 +1230,7 @@
 <h2 id="_6">숫자 연산자</h2>
 <p>Luau에서 숫자로 연산을 할수있음</p>
 <div class="language-lua highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">12</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nv">a</span><span class="w"> </span><span class="c1">-- unm: 부호를 반대로 취함 (10이니깐 -10이 되는거) (-12)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="nv">a</span><span class="w"> </span><span class="c1">-- unm: 부호를 반대로 취함 (12이니깐 -12이 되는거) (-12)</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="c1">-- add: a에 5를 더한 수를 반환함 (17)</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nv">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="c1">-- sub: a에 5를 뺀 수를 반환함 (7)</span>
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="nv">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="c1">-- mul: a에 5를 곱한 수를 반환함 (60)</span>
@@ -1301,7 +1301,7 @@
 <p>Luau엔 국룰이 하나가 있는데 가급적이면 local로 변수를 선언해야함 (국룰임)</p>
 <h2 id="not">not</h2>
 <p>not은 boolean에 주로 사용되는 문법임 (아니여도 사용되긴함)</p>
-<p>not A에서 A가 (nil 또는 boolean)이면 true 아니면 false를 반환하는 문법이다
+<p>not A에서 A가 (nil 또는 false)이면 true 아니면 false를 반환하는 문법이다
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">-- true</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="c1">-- true</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">-- false</span>
