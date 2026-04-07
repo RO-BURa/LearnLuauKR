@@ -1,6 +1,6 @@
 # [**Luau**](https://luau.org/)란
 
-Luau는 **Roblox** 팀에서 Lua를 개조한 프로그래밍 언어임
+[Luau](https://luau.org/)는 **Roblox** 팀에서 [Lua](https://www.lua.org/)를 개조한 프로그래밍 언어임
 
 <img src="https://raw.githubusercontent.com/luau-lang/site/master/logo.svg" width="50%">
 
