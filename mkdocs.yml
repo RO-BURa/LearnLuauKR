@@ -1,1 +1,54 @@
-site_name: My Docs
+site_name: LearnLuauKR
+site_url: https://RO-BURa.github.io/LearnLuauKR/
+
+theme:
+  name: material
+  language: ko
+  
+  # 로고 및 파비콘 설정 (.webp 지원)
+  logo: https://raw.githubusercontent.com/luau-lang/site/master/logo.svg
+  favicon: https://raw.githubusercontent.com/luau-lang/site/master/logo.svg
+
+  palette:
+    # 다크 모드 설정
+    - scheme: slate
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-4
+        name: 다크 모드
+    # 라이트 모드 설정
+    - scheme: default
+      primary: indigo
+      accent: cyan
+      toggle:
+        icon: material/brightness-7
+        name: 라이트 모드
+  
+  features:
+    - navigation.tabs       # 상단 탭 메뉴
+    - navigation.sections  # 왼쪽 사이드바 섹션 구분
+    - navigation.top       # 위로 가기 버튼
+    - content.code.copy    # 코드 복사 버튼
+    - content.code.annotate # 코드 설명 어노테이션
+
+# 목차 구조
+nav:
+  - 홈: index.md
+  - 기초: basics.md
+  - 중급: intermediate.md
+  - 고급: advanced.md
+  - 타입 (초급): types/beginner.md
+  - 타입 (고급): types/advanced.md
+
+# 마크다운 확장 기능
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - admonition  # 경고/정보 박스 기능 (!!! info 같은 거 쓸 때 필요 ㅋ)
+  - pymdownx.details # 접기/펴기 기능

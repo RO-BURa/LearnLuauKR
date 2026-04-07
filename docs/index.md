@@ -1,17 +1,16 @@
-# Welcome to MkDocs
+# [**Luau**](https://luau.org/)란
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Luau는 **Roblox** 팀에서 Lua를 개조한 프로그래밍 언어임
 
-## Commands
+<img src="https://raw.githubusercontent.com/luau-lang/site/master/logo.svg" width="50%">
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
+## 테스트 방법
+Luau는 간단하게 [play.luau.org](https://play.luau.org)에서 테스트가능함
 
-## Project layout
+## 목차
+### [기초](basics.md)
+### [중급](intermediate.md)
+### [고급](advanced.md)
+### [타입 (초급)](types/beginner.md)
+### [타입 (고급)](types/advanced.md)
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
