@@ -1300,8 +1300,8 @@
 이렇게 nil로 값을 지울 필요가없음</p>
 <p>Luau엔 국룰이 하나가 있는데 가급적이면 local로 변수를 선언해야함 (국룰임)</p>
 <h2 id="not">not</h2>
-<p>not은 boolean에 주로 사용되는 문법임 (아니여도 사용되긴함)
-not A에서 A가 (nil 또는 boolean)이면 true 아니면 false를 반환하는 문법이다
+<p>not은 boolean에 주로 사용되는 문법임 (아니여도 사용되긴함)</p>
+<p>not A에서 A가 (nil 또는 boolean)이면 true 아니면 false를 반환하는 문법이다
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">-- true</span>
 </span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="c1">-- true</span>
 </span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">-- false</span>
@@ -1327,8 +1327,8 @@ not A에서 A가 (nil 또는 boolean)이면 true 아니면 false를 반환하는
 </span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">-- false</span>
 </span></code></pre></div></p>
 <h3 id="a-b_1">A ~= B</h3>
-<p>A와 B가 다르면 true 아니면 false
-not (A == B)와 같음
+<p>A와 B가 다르면 true 아니면 false</p>
+<p>not (A == B)와 같음
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="c1">-- false</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="o">~=</span><span class="w"> </span><span class="mf">300</span><span class="w"> </span><span class="c1">-- true</span>
 </span></code></pre></div></p>
@@ -1339,8 +1339,8 @@ not (A == B)와 같음
 </span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">5</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="o">-</span><span class="mf">3</span><span class="w"> </span><span class="c1">-- true</span>
 </span></code></pre></div></p>
 <h3 id="a-b_3">A &gt; B</h3>
-<p>A가 B보다 크면 true 아니면 false
-(실제론 B &lt; A와 같음)
+<p>A가 B보다 크면 true 아니면 false</p>
+<p>B &lt; A와 같음
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="c1">-- true</span>
 </span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">50</span><span class="w"> </span><span class="c1">-- false</span>
 </span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">-</span><span class="mf">2</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">-</span><span class="mf">2</span><span class="w"> </span><span class="c1">-- false</span>
@@ -1352,8 +1352,8 @@ not (A == B)와 같음
 </span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4224</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="c1">-- false</span>
 </span></code></pre></div></p>
 <h3 id="a-b_5">A &gt;= B</h3>
-<p>A가 B랑 같거나 A가 더 크면 true 아니면 false
-not (A &lt; B)와 같음
+<p>A가 B랑 같거나 A가 더 크면 true 아니면 false</p>
+<p>not (A &lt; B)와 같음
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="c1">-- false</span>
 </span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">6</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">6</span><span class="w"> </span><span class="c1">-- true</span>
 </span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">7</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="c1">-- true</span>
@@ -1362,19 +1362,19 @@ not (A &lt; B)와 같음
 <h2 id="_11">반복문</h2>
 <div class="admonition info">
 <p class="admonition-title">참고</p>
-<p>여기에 일반적인 정보를 적어.</p>
+<p>asdf</p>
 </div>
 <div class="admonition success">
 <p class="admonition-title">꿀팁</p>
-<p>Luau에서 변수는 무조건 <code>local</code>로 쓰는 게 국룰이야!</p>
+<p>asdf</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">주의</p>
-<p>이 코드를 실행하면 에러가 날 수 있어!</p>
+<p>asdf</p>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">위험</p>
-<p>절대로 이 파일을 지우지 마.</p>
+<p>asdf</p>
 </div>
 <table>
 <thead>
