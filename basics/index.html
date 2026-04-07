@@ -773,6 +773,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#tostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tostring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tonumber" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tonumber
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#print" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1354,6 +1376,28 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#tostring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tostring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tonumber" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        tonumber
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#print" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1849,68 +1893,100 @@
 </span><span id="__span-33-14"><a id="__codelineno-33-14" name="__codelineno-33-14" href="#__codelineno-33-14"></a><span class="c1">-- 결과적으로 a는 7이 될거임 (0 + 2 + 5)</span>
 </span></code></pre></div></p>
 <h3 id="_13">반환</h3>
-<p>미완</p>
+<p>함수는 실행했을때 값을 반환할수있음</p>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">dd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">b</span>
+</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="kr">end</span>
+</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a>
+</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">dd</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 3 (1과 2가 a와 b로 들어가고 a + b는 3이고 3을 반환하기때문에 dd(1,2)를 3처럼 쓸수있음)</span>
+</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">dd</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nf">dd</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">))</span><span class="w"> </span><span class="c1">-- 10</span>
+</span></code></pre></div>
 <h3 id="_14">유명한 내장 함수들</h3>
+<p>내장함수들은 기본적으로 전역변수처럼 <strong>환경</strong>에 미리 있는 값이기 때문에 함수의 이름을 입력만해서 불러올수있음</p>
+<h4 id="tostring">tostring</h4>
+<p>tostring은 Luau에 기본으로 내장되어있는 함수임</p>
+<p>tostring은 어떤것이든지 문자로 바꿔줌
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tostring</span><span class="p">(</span><span class="mf">30</span><span class="p">)</span><span class="w"> </span><span class="c1">-- &quot;30&quot; (30과 &quot;30&quot;은 엄연히 다름)</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tostring</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="c1">-- &quot;true&quot;</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tostring</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">-- &quot;nil&quot;</span>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="kd">local</span><span class="w"> </span><span class="nv">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tostring</span><span class="p">(</span><span class="s2">&quot;이거 이미 문자임😭&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- &quot;이거 이미 문자임😭&quot;</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="nf">tostring</span><span class="p">()</span><span class="w"> </span><span class="c1">-- tostring 함수는 실행할때 인수를 안넣으면 에러남 (tostring을 실행할때 인수들의 길이가 1 이상이여야함)</span>
+</span></code></pre></div></p>
+<h4 id="tonumber">tonumber</h4>
+<p>tonumber도 tostring과 비슷한데</p>
+<p>tostring이 문자열로 바꾸는거였다면 tonumber은 문자열로 바꿔줌
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tonumber</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">123</span><span class="s2">&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 123</span>
+</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tonumber</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 2</span>
+</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tonumber</span><span class="p">(</span><span class="s2">&quot;이건 숫자로 어떻게 바꿀껀데 ㅋ&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- nil (숫자로 못바꾸면 에러)</span>
+</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="nf">tonumber</span><span class="p">()</span><span class="w"> </span><span class="c1">-- tonumber 함수는 실행할때 인수를 안넣으면 에러남 (tostring처럼 최소 한개의 인수를 요구함)</span>
+</span></code></pre></div></p>
 <h4 id="print">print</h4>
 <p>Luau를 https://play.luau.org/ 또는 Roblox Studio에서 실행하는경우 <strong>print</strong>라는 내장함수가 <strong>환경</strong>에 존재함
 (*엔진에 따라 없을수도 있는데 보통 비슷한 함수가 하나는 있을거임)</p>
 <p>일반적으로 print 함수는 출력에 텍스트가 뜨는 함수이기 때문에 내부적으로 C++로 구현되어있음
-아까 전역변수가 <strong>환경</strong>에서 있는 값을 가져온다고 한거처럼 print도 환경에 이미 있던 "print"라는 함수를 가져오는거임</p>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="nf">print</span><span class="p">()</span><span class="w"> </span><span class="c1">-- 길이 0의 인수를 출력함</span>
+</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="nf">print</span><span class="p">(</span><span class="s2">&quot;안녕&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- &quot;안녕&quot;을 출력함</span>
+</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="nf">print</span><span class="p">(</span><span class="mf">30</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 30을 출력함</span>
+</span><span id="__span-37-4"><a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="nf">print</span><span class="p">(</span><span class="s2">&quot;여러개도&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;가능함&quot;</span><span class="p">)</span>
+</span></code></pre></div></p>
 <hr />
 <h2 id="_15">반복문</h2>
 <p>반복문은 반복하여 코드를 실행하는 문법임</p>
 <h3 id="for">for</h3>
 <p>for의 사용법은</p>
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1">-- 참고로 변수 이름 국룰 이름은 i 임</span>
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="kr">for</span><span class="w"> </span><span class="o">&lt;</span><span class="err">변수이름</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="err">기본값</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="err">최대값</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="err">증가값</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">do</span>
-</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">코드</span><span class="o">&gt;</span>
-</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="kr">end</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="c1">-- 참고로 변수 이름 국룰 이름은 i 임</span>
+</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="kr">for</span><span class="w"> </span><span class="o">&lt;</span><span class="err">변수이름</span><span class="o">&gt;</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="err">기본값</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="err">최대값</span><span class="o">&gt;</span><span class="p">,</span><span class="w"> </span><span class="o">&lt;</span><span class="err">증가값</span><span class="o">&gt;</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="w">    </span><span class="o">&lt;</span><span class="err">코드</span><span class="o">&gt;</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="kr">end</span>
 </span></code></pre></div>
 <p>내부에서 변수를 하나 지정하는데 그 변수가 반복마다 &lt;증가값&gt;씩 증가하고
 변수가 &lt;최대값&gt;이랑 같거나 더 커지면 반복을 멈춤
 참고로 반복마다 &lt;코드&gt;를 실행함</p>
 <p>예시:
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1">-- i의 기본값은 1이고 i가 10이 될때까지 반복하고 1씩 증가함</span>
-</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
-</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="o">=</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="kr">do</span>
-</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="w">    </span><span class="nv">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">i</span>
-</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="kr">end</span>
-</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a>
-</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a><span class="c1">-- total은 1 + 2 + 3 + ... + 9 + 10임 (55)</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-39-1"><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a><span class="c1">-- i의 기본값은 1이고 i가 10이 될때까지 반복하고 1씩 증가함</span>
+</span><span id="__span-39-2"><a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
+</span><span id="__span-39-3"><a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="o">=</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="kr">do</span>
+</span><span id="__span-39-4"><a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a><span class="w">    </span><span class="nv">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">i</span>
+</span><span id="__span-39-5"><a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a><span class="kr">end</span>
+</span><span id="__span-39-6"><a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>
+</span><span id="__span-39-7"><a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a><span class="c1">-- total은 1 + 2 + 3 + ... + 9 + 10임 (55)</span>
+</span><span id="__span-39-8"><a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a><span class="nf">print</span><span class="p">(</span><span class="nv">total</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 55 (후 드디어 함수 배워서 print 쓸수있다 ㅎ)</span>
 </span></code></pre></div></p>
 <div class="admonition info">
 <p class="admonition-title">참고</p>
 <p>쉼표 뒤에 띄어쓰기 하나 붙혀주는건 국룰임</p>
 </div>
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
-</span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="c1">-- &lt;증가값&gt;을 입력하지 않으면 기본값인 1로 설정된다</span>
-</span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="o">=</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="kr">do</span><span class="w"> </span><span class="c1">-- i=1, 10, 1이랑 같음</span>
-</span><span id="__span-36-4"><a id="__codelineno-36-4" name="__codelineno-36-4" href="#__codelineno-36-4"></a><span class="w">    </span><span class="nv">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">i</span>
-</span><span id="__span-36-5"><a id="__codelineno-36-5" name="__codelineno-36-5" href="#__codelineno-36-5"></a><span class="kr">end</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-40-1"><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span>
+</span><span id="__span-40-2"><a id="__codelineno-40-2" name="__codelineno-40-2" href="#__codelineno-40-2"></a><span class="c1">-- &lt;증가값&gt;을 입력하지 않으면 기본값인 1로 설정된다</span>
+</span><span id="__span-40-3"><a id="__codelineno-40-3" name="__codelineno-40-3" href="#__codelineno-40-3"></a><span class="kr">for</span><span class="w"> </span><span class="nv">i</span><span class="o">=</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="kr">do</span><span class="w"> </span><span class="c1">-- i=1, 10, 1이랑 같음</span>
+</span><span id="__span-40-4"><a id="__codelineno-40-4" name="__codelineno-40-4" href="#__codelineno-40-4"></a><span class="w">    </span><span class="nv">total</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">total</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">i</span>
+</span><span id="__span-40-5"><a id="__codelineno-40-5" name="__codelineno-40-5" href="#__codelineno-40-5"></a><span class="kr">end</span>
+</span><span id="__span-40-6"><a id="__codelineno-40-6" name="__codelineno-40-6" href="#__codelineno-40-6"></a>
+</span><span id="__span-40-7"><a id="__codelineno-40-7" name="__codelineno-40-7" href="#__codelineno-40-7"></a><span class="nf">print</span><span class="p">(</span><span class="nv">total</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 55</span>
 </span></code></pre></div>
 <h3 id="while">while</h3>
 <h3 id="repeat">repeat</h3>
 <hr />
 <h2 id="_16">기초를 마치며 알아야하는 규칙들</h2>
 <h3 id="_17">문자 연산자</h3>
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-37-1"><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hi&quot;</span>
-</span><span id="__span-37-2"><a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bob&quot;</span>
-</span><span id="__span-37-3"><a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="c1">-- c는 &quot;hibob&quot;이 됨</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hi&quot;</span>
+</span><span id="__span-41-2"><a id="__codelineno-41-2" name="__codelineno-41-2" href="#__codelineno-41-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;bob&quot;</span>
+</span><span id="__span-41-3"><a id="__codelineno-41-3" name="__codelineno-41-3" href="#__codelineno-41-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="c1">-- c는 &quot;hibob&quot;이 됨</span>
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">참고</p>
 <p>..을 concat이라고 부름 (번역: 연결)</p>
 </div>
 <h3 id="_18">단축 연산자</h3>
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12</span>
-</span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span>
-</span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="nv">b</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="c1">-- b = b + 5</span>
-</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span>
-</span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="nv">c</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="c1">-- c = c - 5</span>
-</span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a><span class="kd">local</span><span class="w"> </span><span class="nv">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span>
-</span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="nv">d</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="c1">-- d = d * 5</span>
-</span><span id="__span-38-8"><a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="c1">-- ...</span>
-</span><span id="__span-38-9"><a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a><span class="c1">-- 이 외에도 나눗셉 제곱 다 있고 ..=도 있음</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12</span>
+</span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span>
+</span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="nv">b</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="c1">-- b = b + 5</span>
+</span><span id="__span-42-4"><a id="__codelineno-42-4" name="__codelineno-42-4" href="#__codelineno-42-4"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span>
+</span><span id="__span-42-5"><a id="__codelineno-42-5" name="__codelineno-42-5" href="#__codelineno-42-5"></a><span class="nv">c</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="c1">-- c = c - 5</span>
+</span><span id="__span-42-6"><a id="__codelineno-42-6" name="__codelineno-42-6" href="#__codelineno-42-6"></a><span class="kd">local</span><span class="w"> </span><span class="nv">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span>
+</span><span id="__span-42-7"><a id="__codelineno-42-7" name="__codelineno-42-7" href="#__codelineno-42-7"></a><span class="nv">d</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="c1">-- d = d * 5</span>
+</span><span id="__span-42-8"><a id="__codelineno-42-8" name="__codelineno-42-8" href="#__codelineno-42-8"></a><span class="c1">-- ...</span>
+</span><span id="__span-42-9"><a id="__codelineno-42-9" name="__codelineno-42-9" href="#__codelineno-42-9"></a><span class="c1">-- 이 외에도 나눗셉 제곱 다 있고 ..=도 있음</span>
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">참고</p>
