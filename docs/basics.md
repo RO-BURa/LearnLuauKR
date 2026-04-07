@@ -112,7 +112,7 @@ nil, number, boolean, string이고
 nil은 비어있는 값 (다른 언어에선 null이라고 생각하면됨) (Luau엔 다른 언어랑 다르게 undefined가 없음)
 
 ### number
-number은 숫자 (위 변수에서 설명한거랑 같음)
+number은 숫자
 
 ### boolean
 boolean은 참/거짓 (true와 false)
@@ -136,7 +136,7 @@ Luau에서 숫자로 연산을 할수있음
 
 ```lua
 a = 12
-b = -a -- unm: 부호를 반대로 취함 (10이니깐 -10이 되는거) (-12)
+b = -a -- unm: 부호를 반대로 취함 (12이니깐 -12이 되는거) (-12)
 c = a + 5 -- add: a에 5를 더한 수를 반환함 (17)
 d = a - 5 -- sub: a에 5를 뺀 수를 반환함 (7)
 e = a * 5 -- mul: a에 5를 곱한 수를 반환함 (60)
