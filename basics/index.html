@@ -1903,10 +1903,12 @@
 </span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">dd</span><span class="p">(</span><span class="mf">1</span><span class="p">,</span><span class="w"> </span><span class="nf">dd</span><span class="p">(</span><span class="mf">4</span><span class="p">,</span><span class="w"> </span><span class="mf">5</span><span class="p">))</span><span class="w"> </span><span class="c1">-- 10</span>
 </span></code></pre></div>
 <h3 id="_14">유명한 내장 함수들</h3>
-<p>내장함수들은 기본적으로 전역변수처럼 <strong>환경</strong>에 미리 있는 값이기 때문에 함수의 이름을 입력만해서 불러올수있음</p>
+<p>내장함수들은 기본적으로 전역변수처럼 <strong>환경</strong>에 미리 있는 값이기 때문에 함수의 이름을 입력만해서 불러올수있음
+이 외에도 많지만 기초이기 때문에 알아야 하는것만 설명함</p>
 <h4 id="tostring">tostring</h4>
 <p>tostring은 Luau에 기본으로 내장되어있는 함수임</p>
-<p>tostring은 어떤것이든지 문자로 바꿔줌
+<p>tostring은 어떤것이든지 문자로 바꿔줌</p>
+<p>내부적으로 C++로 만들어진 함수임
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tostring</span><span class="p">(</span><span class="mf">30</span><span class="p">)</span><span class="w"> </span><span class="c1">-- &quot;30&quot; (30과 &quot;30&quot;은 엄연히 다름)</span>
 </span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tostring</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span><span class="c1">-- &quot;true&quot;</span>
 </span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tostring</span><span class="p">(</span><span class="kc">nil</span><span class="p">)</span><span class="w"> </span><span class="c1">-- &quot;nil&quot;</span>
@@ -1915,7 +1917,8 @@
 </span></code></pre></div></p>
 <h4 id="tonumber">tonumber</h4>
 <p>tonumber도 tostring과 비슷한데</p>
-<p>tostring이 문자열로 바꾸는거였다면 tonumber은 문자열로 바꿔줌
+<p>tostring이 문자열로 바꾸는거였다면 tonumber은 문자열로 바꿔줌</p>
+<p>내부적으로 C++로 만들어진 함수임
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tonumber</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">123</span><span class="s2">&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 123</span>
 </span><span id="__span-36-2"><a id="__codelineno-36-2" name="__codelineno-36-2" href="#__codelineno-36-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tonumber</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 2</span>
 </span><span id="__span-36-3"><a id="__codelineno-36-3" name="__codelineno-36-3" href="#__codelineno-36-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">tonumber</span><span class="p">(</span><span class="s2">&quot;이건 숫자로 어떻게 바꿀껀데 ㅋ&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- nil (숫자로 못바꾸면 에러)</span>
