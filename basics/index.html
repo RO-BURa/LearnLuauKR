@@ -2227,7 +2227,7 @@ not false는 false의 반대인 true임</p>
 <p>반환을 하는법은 함수 내부에서
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-41-1"><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a><span class="kr">return</span><span class="w"> </span><span class="o">&lt;</span><span class="err">반환할값</span><span class="o">&gt;</span>
 </span></code></pre></div>
-으로 봔한할수있음</p>
+으로 반한할수있음</p>
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-42-1"><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">dd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kr">function</span><span class="p">(</span><span class="nv">a</span><span class="p">,</span><span class="w"> </span><span class="nv">b</span><span class="p">)</span>
 </span><span id="__span-42-2"><a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a><span class="w">    </span><span class="c1">-- return &lt;반환할값&gt;</span>
 </span><span id="__span-42-3"><a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a><span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nv">b</span>
@@ -2415,8 +2415,9 @@ not false는 false의 반대인 true임</p>
 </span></code></pre></div>
 <hr />
 <h2 id="_18">복합 대입 연산자</h2>
-<p>A = A &lt;연산자&gt; B를 간추리는 문법임</p>
-<p>보통 간추렸을때 A &lt;연산자&gt;= B가 됨</p>
+<p>산술 연산과 대입을 한 번에 처리하는 단축 문법임</p>
+<p>일반적으로 A = A &lt;연산자&gt; B의 형태를 A &lt;연산자&gt;= B로 만듬</p>
+<p>연산자 중에서 모든 산술 연산자와 concat이 포함됨</p>
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-64-1"><a id="__codelineno-64-1" name="__codelineno-64-1" href="#__codelineno-64-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">12</span>
 </span><span id="__span-64-2"><a id="__codelineno-64-2" name="__codelineno-64-2" href="#__codelineno-64-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span>
 </span><span id="__span-64-3"><a id="__codelineno-64-3" name="__codelineno-64-3" href="#__codelineno-64-3"></a><span class="nv">b</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="c1">-- b = b + 5</span>
@@ -2424,9 +2425,9 @@ not false는 false의 반대인 true임</p>
 </span><span id="__span-64-5"><a id="__codelineno-64-5" name="__codelineno-64-5" href="#__codelineno-64-5"></a><span class="nv">c</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="c1">-- c = c - 5</span>
 </span><span id="__span-64-6"><a id="__codelineno-64-6" name="__codelineno-64-6" href="#__codelineno-64-6"></a><span class="kd">local</span><span class="w"> </span><span class="nv">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span>
 </span><span id="__span-64-7"><a id="__codelineno-64-7" name="__codelineno-64-7" href="#__codelineno-64-7"></a><span class="nv">d</span><span class="w"> </span><span class="o">*=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="c1">-- d = d * 5</span>
-</span><span id="__span-64-8"><a id="__codelineno-64-8" name="__codelineno-64-8" href="#__codelineno-64-8"></a>
-</span><span id="__span-64-9"><a id="__codelineno-64-9" name="__codelineno-64-9" href="#__codelineno-64-9"></a><span class="c1">-- ...</span>
-</span><span id="__span-64-10"><a id="__codelineno-64-10" name="__codelineno-64-10" href="#__codelineno-64-10"></a><span class="c1">-- 이 외에도 나눗셉 제곱 다 있고 ..=도 있음</span>
+</span><span id="__span-64-8"><a id="__codelineno-64-8" name="__codelineno-64-8" href="#__codelineno-64-8"></a><span class="kd">local</span><span class="w"> </span><span class="nv">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span>
+</span><span id="__span-64-9"><a id="__codelineno-64-9" name="__codelineno-64-9" href="#__codelineno-64-9"></a><span class="nv">e</span><span class="w"> </span><span class="o">/=</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="c1">-- e = e / 5</span>
+</span><span id="__span-64-10"><a id="__codelineno-64-10" name="__codelineno-64-10" href="#__codelineno-64-10"></a><span class="c1">--- ...이 외에 더 있음</span>
 </span></code></pre></div>
 <hr />
 <h2 id="_19">다중 할당</h2>
