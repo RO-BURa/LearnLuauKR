@@ -1,0 +1,22 @@
+/* h5, h6 스타일: h4보다 아주 미세하게 작게 설정 */
+h5, h6 {
+    /* h4(1em)보다 살짝 작은 0.95em으로 계층감 부여 */
+    font-size: 0.95em !important; 
+    font-weight: 700 !important;
+    
+    /* 선명도 100% (회색 탈출) */
+    color: var(--md-typeset-color) !important;
+    opacity: 1 !important;
+    
+    /* 여백 조정: 제목답게 위쪽 공간 확보 */
+    margin-top: 1.25em !important;
+    margin-bottom: 0.5em !important;
+    
+    /* 소문자 유지 */
+    text-transform: none !important;
+}
+
+/* 앵커 아이콘 크기 조정 */
+h5 .headerlink, h6 .headerlink {
+    font-size: 0.8em;
+}

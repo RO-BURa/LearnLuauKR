@@ -2,34 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://RO-BURa.github.io/LearnLuauKR/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-11</lastmod>
     </url>
     <url>
          <loc>https://RO-BURa.github.io/LearnLuauKR/advanced/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-11</lastmod>
     </url>
     <url>
          <loc>https://RO-BURa.github.io/LearnLuauKR/basics/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-11</lastmod>
     </url>
     <url>
          <loc>https://RO-BURa.github.io/LearnLuauKR/intermediate/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-11</lastmod>
     </url>
     <url>
          <loc>https://RO-BURa.github.io/LearnLuauKR/temp/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-11</lastmod>
     </url>
     <url>
          <loc>https://RO-BURa.github.io/LearnLuauKR/test/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-11</lastmod>
+    </url>
+    <url>
+         <loc>https://RO-BURa.github.io/LearnLuauKR/computer/basics/</loc>
+         <lastmod>2026-04-11</lastmod>
     </url>
     <url>
          <loc>https://RO-BURa.github.io/LearnLuauKR/types/advanced/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-11</lastmod>
     </url>
     <url>
          <loc>https://RO-BURa.github.io/LearnLuauKR/types/beginner/</loc>
-         <lastmod>2026-04-09</lastmod>
+         <lastmod>2026-04-11</lastmod>
     </url>
 </urlset>
