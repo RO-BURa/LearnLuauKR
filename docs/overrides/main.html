@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{ super() }}
+
+  <div id="luau-container" class="luau-launcher-container">
+      <!-- 오른쪽 위 조절 핸들 -->
+      <div id="luau-resizer" class="resizer-top-right"></div>
+      
+      <iframe src="https://play.luau.org/?embed=true&amp;theme=auto#code=N4IgbiBcBMA0IGMohPAzlUB7ADgFwEsBbAgLwENCsA7AGQFMx6AbKOEAE3oCMBXAcwZNWMAL6igA"
+              style="width: 100%; height: 100%;" 
+              loading="lazy"
+              allowfullscreen=""
+              allow="clipboard-write">
+      </iframe>
+  </div>
+{% endblock %}

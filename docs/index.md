@@ -2,10 +2,12 @@
 
 [Luau](https://luau.org/)는 **Roblox** 팀에서 [Lua](https://www.lua.org/)를 개조한 프로그래밍 언어임
 
+[Luau](https://luau.org/)는 내부적으로 [C++](https://isocpp.org/)이라는 프로그래밍 언어로 만들어져있음
+
 <img src="https://raw.githubusercontent.com/luau-lang/site/master/logo.svg" width="50%">
 
 ## 테스트 방법
-Luau는 [play.luau.org](https://play.luau.org/)에서 간단하게 테스트가 가능하고
+[Luau](https://luau.org/)는 [play.luau.org](https://play.luau.org/)에서 간단하게 테스트가 가능하고
 
 [Roblox Studio](https://create.roblox.com/)에서도 테스트 가능함
 
@@ -15,7 +17,7 @@ Luau는 [play.luau.org](https://play.luau.org/)에서 간단하게 테스트가 
 [github.com/RO-BURa/LearnLuauKR](https://github.com/RO-BURa/LearnLuauKR)
 
 
-Luau의 깃허브
+[Luau](https://luau.org/)의 깃허브
 
 [github.com/luau-lang/luau](https://github.com/luau-lang/luau)
 

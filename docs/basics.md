@@ -1,5 +1,7 @@
 # 기초
 
+기초에서는 Luau를 하기 위해서 꼭 알아야하는 개념들을 다룸
+
 ## 환경과 변수
 Luau에는 변수라는 개념이 있음
 
@@ -227,6 +229,13 @@ end
 
 Luau엔 국룰이 하나가 있는데 가급적이면 local로 변수를 선언해야함 (국룰임)
 
+!!! warning "주의"
+    코드기준으로 위에 있는 지역변수에만 접근할수있음 (아래는 접근못함)
+    ```luau
+    local a = b -- nil (아니 접근을 할수있겠냐고;;;)
+    local b = 100
+    ```
+
 ---
 ## 논리 연산자
 
@@ -438,6 +447,7 @@ end
 ```
 
 먼저 <조건1>을 확인하고 맞으면 <코드1>을 실행함
+
 만약 <조건1>이 안맞으면 다음 조건을 확인하고 그 조건이 맞으면 그 조건의 코드를 실행함 아니면 다음 조건으로 넘어감
 
 예시:
@@ -454,6 +464,7 @@ end
 ```
 
 아직도 elseif가 이해되지않는다면
+
 위코드와 아래코드가 똑같이 작동한다고 이해하면 됨
 ```luau
 if false then
@@ -546,18 +557,15 @@ dd(2, 2) -- n에 2가 들어가고 x에 2가 들어간 상태로 코드가 실�
     ```
 
 !!! info "참고"
-    함수에 매개변수를 전달할때 내부적으로 매개변수의 길이 정보도 같이 보냄
+    여기서 3, 2처럼 여러개로 이루어진 값을 tuple이라고 함
 
-    글케까지 중요한건 아니고 알면 좋은 정보임
-    ```luau
-    local dd = function() end
+    한국어로는 튜플
 
-    -- 길이 2 | "hi", true
-    dd("hi", true)
+    tuple에는 길이 정보도 함께 포함됨
 
-    -- 길이 1 | nil
-    dd(nil)
-    ```
+    예시로 nil, nil이면
+    
+    내부적으로는 길이 2 | nil, nil 이렇게 저장한다는 뜻임
 
 ### 반환
 
@@ -567,7 +575,7 @@ dd(2, 2) -- n에 2가 들어가고 x에 2가 들어간 상태로 코드가 실�
 ```luau
 return <반환할값>
 ```
-으로 봔한할수있음
+으로 반환할수있음
 
 ```luau
 local dd = function(a, b)
@@ -582,6 +590,7 @@ local b = dd(1, dd(4, 5)) -- 10
 ### 유명한 내장 함수들
 
 내장함수들은 기본적으로 전역변수처럼 **환경**에 미리 있는 값이기 때문에 함수의 이름을 입력만해서 불러올수있음
+
 이 외에도 많지만 기초이기 때문에 알아야 하는것만 설명함
 
 #### tostring
@@ -595,8 +604,25 @@ local a = tostring(30) -- "30" (30과 "30"은 엄연히 다름)
 local b = tostring(true) -- "true"
 local c = tostring(nil) -- "nil"
 local d = tostring("이거 이미 문자임😭") -- "이거 이미 문자임😭"
-tostring() -- tostring 함수는 실행할때 인수를 안넣으면 에러남 (tostring을 실행할때 인수들의 길이가 1 이상이여야함)
 ```
+
+!!! warning "주의"
+    그렇다고 매개변수에 아무것도 안넣으면 에러남
+    예시:
+    <iframe src="https://play.luau.org/?embed=true&amp;theme=auto#code=N4IgbiBcBMA0IGMogC4HsDOKBOBLAdgOYAUAlCPBlKGgA4q4C2uAXgIYNr4AyApmLwA2UOIjSNauQb2wAlXozbYA1lUg4ArrwC+2oA"
+        style="width: 100%; height: 200px; border: 1px solid var(--sl-color-gray-5);"
+        loading="lazy"
+        allowfullscreen=""
+        allow="clipboard-write"
+        title="Luau Playground">
+    </iframe>
+    !!! info 참고
+        <button style="display: inline-flex; align-items: center; background: #007bff; color: white; border: none; border-radius: 4px; padding: 4px 12px; vertical-align: middle; font-size: 14px; pointer-events: none;">
+            <svg viewBox="0 0 256 256" width="14" height="14" style="margin-right: 6px;">
+                <path fill="currentColor" d="M240,128L72,229.65V26.35Z"></path>
+            </svg>
+            Run
+        </button> 버튼을 누르면 실행할수있고 밑에 출력을 볼수있음
 
 #### tonumber
 tonumber도 tostring과 비슷한데
@@ -604,24 +630,30 @@ tonumber도 tostring과 비슷한데
 tostring이 문자열로 바꾸는거였다면 tonumber은 숫자로 바꿔서 반환해줌
 
 내부적으로 C++로 만들어진 함수임
-```luau
-local a = tonumber("123") -- 123
-local b = tonumber(2) -- 2
-local c = tonumber("이건 숫자로 어떻게 바꿀껀데 ㅋ") -- nil (숫자로 못바꾸면 nil)
-tonumber() -- tonumber 함수는 실행할때 인수를 안넣으면 에러남 (tostring처럼 최소 한개의 인수를 요구함)
-```
+
+<iframe src="https://play.luau.org/?embed=true&amp;theme=auto#code=N4IgbiBcBMA0IGMogDYHsEEMUAJM4F4cAXNAOwFcBbAIwFMAnACgB0QBGaAZjYEocAtAJyceZdFlw1CJctXrNo-ITmgtxGbDgQzSlWo1YhALuOAXGpyBqIcAJ44B0OnIBbRwN2tgGJqcgFB7AA-WABusAOzTkDSjHyCwmQAlrhM1naA3V1ugB31gC5dOGEovOp68obKwoAZo4AjzbIAzsQMoWQA5oAZM4A-7TiAJ52AODWAAz2AGEM4gCKjgCzdgME1BYASo4DEjYA840mAC6OAN+2AFQ0g8IVQoGgADsShVKEAXpgr5AAydGB0KFBwiGhUi+GMAEp0VJgMANZzkCUUdAC+70A"
+    style="width: 100%; height: 350px; border: 1px solid var(--sl-color-gray-5);"
+    loading="lazy"
+    allowfullscreen=""
+    allow="clipboard-write"
+    title="Luau Playground">
+</iframe>
 
 #### print
 Luau를 https://play.luau.org/ 또는 Roblox Studio에서 실행하는경우 **print**라는 내장함수가 **환경**에 존재함
+
 (*엔진에 따라 없을수도 있는데 보통 비슷한 함수가 하나는 있을거임)
 
 일반적으로 print 함수는 출력에 텍스트가 뜨는 함수이기 때문에 내부적으로 C++로 구현되어있음
-```luau
-print() -- 길이 0의 인수를 출력함
-print("안녕") -- "안녕"을 출력함
-print(30) -- 30을 출력함
-print("여러개도", "가능함")
-```
+
+예시:
+    <iframe src="https://play.luau.org/?embed=true&amp;theme=auto#code=N4IgbiBcBMA0IGMogA4CcCWA7ALgCgEoACAWhKMA46wF3GiAGQDXGjAPccAwhwH06jAc2cFIOwC1WAdLOmz5+IQBKjgVUaxxMkTFSxgEXGufQcNx4AzLVnkdKngKGZNYwDejgG-bAODWAR5rGx5IQAA1gUqaBIAiHgBnKKAB7FBwMAFsMAC8AQxCArAAZAFMwRIAbKDhEANCUDFTEtAAlRNCotABrP0gcNABXRIBfBqA"
+        style="width: 100%; height: 350px; border: 1px solid var(--sl-color-gray-5);"
+        loading="lazy"
+        allowfullscreen=""
+        allow="clipboard-write"
+        title="Luau Playground">
+    </iframe>
 
 ---
 ## 반복문
@@ -640,25 +672,22 @@ end
 ```
 
 내부에서 변수를 하나 지정하는데 그 변수가 반복마다 <증가값>씩 증가하고
+
 변수가 <최대값>이랑 같거나 더 커지면 반복을 멈춤
+
 참고로 반복마다 <코드>를 실행함
 
 예시:
-```luau
--- i의 기본값은 1이고 i가 10이 될때까지 반복하고 1씩 증가함
-local total = 0
-for i=1, 10, 1 do
-    total = total + i
-end
+<iframe src="https://play.luau.org/?embed=true&amp;theme=auto#code=N4IgbiBcBMA0IGMogLQoAQEtAa4+wDHWAfPYEg1gAuPoCMgLuOAHNVoAA1FADJeoAQtgMq2AydYAOT6gGD2BXnsAaq7XKBKUfSBcybqALVYA6AOwA2AewQBDJegAuK7ZvQBedI0UAzFQCcsh8rCb3y6ACYrF6dAAdLmBdoAUmACU7jp6Bsa6+loA1FiKAKYKzoqKaGHRZE5x0OhxAMx56AB0pUUAnEXkjIAh4+j+AKwNIQrevgFRmkHo6U31gCNr6IA7LYAorYAto+gygBhD6IAMPYAzY4A4g14+fuiAHyNTgBHjgCdN6IByjEEg8ADOUKAqntqYALaYAF7q1yoKADIJYAlKUHCIKjeeTBKBKWABKCRu6ksAGszpBtJYAK4JAC+KKAA"
+    style="width: 100%; height: 400px; border: 1px solid var(--sl-color-gray-5);"
+    loading="lazy"
+    allowfullscreen=""
+    allow="clipboard-write"
+    title="Luau Playground">
+</iframe>
 
--- total은 1 + 2 + 3 + ... + 9 + 10임 (55)
-print(total) -- 55 (후 드디어 함수 배워서 print 쓸수있다 ㅎ)
-```
 
-```
-출력
-55
-```
+
 
 <증가값>은 입력하지 않아도됨 (기본값이 1)
 
@@ -810,18 +839,30 @@ end
 for 외에도 모든 반복문에서 사용 가능함
 
 ---
-## 기초를 마치며 알아야하는 규칙들
+## 문자 연산자
 
-### 문자 연산자
+문자열에 사용할수있는 연산자
+
+### concat
+문자열 2개를 합치는 연산자임
+
+concat은 한국어로 연결
+
 ```luau
 local a = "hi"
 local b = "bob"
 local c = a .. b -- c는 "hibob"이 됨
 ```
-!!! info "참고"
-    .. 연산자를 concat이라고 부름 (번역: 연결)
 
-### 단축 연산자
+---
+## 복합 대입 연산자
+
+산술 연산과 대입을 한 번에 처리하는 단축 문법임
+
+일반적으로 A = A <연산자> B의 형태를 A <연산자>= B로 만듬
+
+연산자 중에서 모든 산술 연산자와 concat이 포함됨
+
 ```luau
 local a = 12
 local b = a
@@ -830,23 +871,224 @@ local c = a
 c -= 5 -- c = c - 5
 local d = a
 d *= 5 -- d = d * 5
--- ...
--- 이 외에도 나눗셉 제곱 다 있고 ..=도 있음
+local e = a
+e /= 5 -- e = e / 5
+--- ...이 외에 더 있음
+```
+
+---
+## 다중 할당
+
+다중 할당이란 동시에 여러값을 변수에 넣는거임
+
+사용법은 변수를 쉼표를 통해서 원하는 변수로 여러개 놓고 등호를 붙히고 tuple을 넣으면 tuple 순서대로 변수에 값이 지정됨
+
+```luau
+<변수들> = <튜플>
+```
+
+이게 무슨말이냐면 밑에 예시를 통해 쉽게 이해할수있음
+
+```luau
+local a
+local b
+
+a,b = 10, 20
+```
+
+위코드랑 같음
+```luau
+local a
+local b
+
+a = 10
+b = 20
+```
+
+변수를 설정할때가 아니더라도 선언할때도 사용 가능함
+
+```luau
+local a, b = 10, 20
+local c, d
+```
+
+위 코드랑 같음
+
+```luau
+local a = 10
+local b = 20
+local c
+local d
+```
+
+---
+## 함수 2
+
+함수에서 안배운것들 추가설명
+
+### 반환
+
+함수는 하나의 값만 반환하는 것이 아닌 여러개의 값(tuple)을 반환할수있음
+
+```luau
+local dd = function()
+    return 1, 2, 3
+end
+
+print(dd()) -- dd()는 1, 2, 3이고 이는 튜플이다 (직접 1, 2, 3 한거랑 같은 튜플로 처리된다는뜻)
+local a, b, c = dd() -- 튜플이기 때문에 다중 할당도 가능
 ```
 
 !!! info "참고"
-    asdf
+    변수 하나는 최대 하나의 값을 받을수 있음
 
-!!! success "꿀팁"
-    asdf
+    그렇기에
+    ```luau
+    local a = 1, 2, 3
+    ```
+    을 한다해도 a에는 1만 저장됨
 
 !!! warning "주의"
-    asdf
+    튜플 뒤에 값이 있으면 이어지는것이 아닌 튜플의 첫번째 요소만 남고 두번째 요소부터는 사라짐
+    ```luau
+    local dd = function()
+        return 1, 2, 3
+    end
 
-!!! danger "위험"
-    asdf
+    print(1, dd())
+    print("-----")
+    print(1, dd(), 100)
+    ```
 
-| 왼쪽 정렬 | 가운데 정렬 | 오른쪽 정렬 |
-| :--- | :---: | ---: |
-| 1 | 2 | 3 |
-| Apple | Banana | Cherry |
+    ```
+    출력
+    1
+    1
+    2
+    3
+    -----
+    1
+    1
+    100
+    ```
+
+    다음과 같이 튜플의 첫번째 요소만 남고 뒤는 사라짐
+
+### 선언
+
+함수엔 특수하게 선언하는 방법이 있음
+
+이것은 기존에 선언하던 방식임
+
+```luau
+local a = 0
+local dd = function()
+    a += 1
+end
+```
+
+그러나 특수하게 선언하는 방법이 있음
+
+```luau
+local function <변수이름>()
+    <코드>
+end
+```
+
+```luau
+local a = 0
+local function dd()
+    a += 1
+end
+```
+
+예시에선 똑같지만 차이점이 하나 있음
+
+과거 버전에선 함수가 자기자신에 대해서 접근을 못함
+```luau
+local dd = function()
+    print(dd) -- 언제나 nil (지역변수는 코드 밑에 있어야 접근 할수있기때문)
+    -- (dd를 선언하고 함수 생성한뒤 값으로 설정하는것이 아닌 함수를 생성하고 변수를 선언한뒤 값으로 설정하는 것임)
+end
+
+dd()
+```
+
+```
+출력
+nil
+```
+
+!!! info "참고"
+    이렇게 해도 해결이 되긴함
+
+    ```luau
+    local dd
+    dd = function()
+        print(dd) -- 함수 (코드기준 위에서 지역변수가 선언되었기 때문에 접근 가능)
+    end
+
+    dd()
+    ```
+
+    ```
+    출력
+    function: 함수 고유번호
+    ```
+
+    그러나 특수하게 선언하면 이것보다 더 간편하게 해결할수있음
+
+```luau
+local function dd()
+    print(dd) -- 특수한 문법에선 함수 자기자신에 대해서 접근할수있음
+end
+
+dd()
+```
+
+```
+출력
+function: 함수 고유번호
+```
+
+이미 변수 선언된 경우에는 local 안붙혀도됨
+
+```luau
+local dd
+function dd()
+    print("ㅎㅇ")
+end
+
+dd()
+```
+
+```
+출력
+ㅎㅇ
+```
+
+!!! info "참고"
+    일반적으로는 특수한 문법으로 함수를 선언하는것이 국룰임
+
+### ...
+
+이건 그렇게 안어려움
+...은 튜플을 받을수있는 유일한 변수임
+함수 매개변수 칸에 ...을 넣으면 매개변수를 튜플로 바로 받을수있음
+
+```luau
+local function dd(hi, ...)
+    print(hi, ...)
+end
+
+dd()
+dd(30, 10, 50)
+dd("ㅎㅇ")
+```
+
+```
+출력
+nil
+30 10 50
+ㅎㅇ
+```
