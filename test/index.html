@@ -684,12 +684,18 @@
 
 </details>
 
-<p>이거 밑에꺼 해봐쓴ㄴ데 ㅈ지원안되는듯
-=== "문제"
-    테이블 <code>t</code>의 "hi" 인덱스에 30을 저장하는 코드는?</p>
-<p>=== "정답"
-    <div class="language-luau highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">t</span><span class="p">.</span><span class="nv">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span>
-</span></code></pre></div></p>
+<p>이거 밑에꺼 해봐쓴ㄴ데 ㅈ지원안되는듯</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">문제</label><label for="__tabbed_1_2">정답</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>테이블 <code>t</code>의 "hi" 인덱스에 30을 저장하는 코드는?</p>
+</div>
+<div class="tabbed-block">
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nv">t</span><span class="p">.</span><span class="nv">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span>
+</span></code></pre></div>
+</div>
+</div>
+</div>
 <div class="admonition info">
 <p class="admonition-title">참고</p>
 <p>asdf</p>
@@ -797,16 +803,21 @@ dasdf</p>
 
                 
 
+  <!-- 왼쪽 아래 Luau 버튼 -->
+  <button id="luau-btn" class="luau-launcher-btn" type="button" title="Luau 코드 테스트" aria-label="Luau 코드 테스트 열기" aria-expanded="false">
+      <img src="https://raw.githubusercontent.com/luau-lang/site/master/logo.svg" alt="Luau">
+  </button>
+
   <div id="luau-container" class="luau-launcher-container">
       <!-- 오른쪽 위 조절 핸들 -->
-      <div id="luau-resizer" class="resizer-top-right"></div>
-      
-      <iframe src="https://play.luau.org/?embed=true&amp;theme=auto#code=N4IgbiBcBMA0IGMohPAzlUB7ADgFwEsBbAgLwENCsA7AGQFMx6AbKOEAE3oCMBXAcwZNWMAL6igA"
-              style="width: 100%; height: 100%;" 
-              loading="lazy"
-              allowfullscreen=""
-              allow="clipboard-write">
-      </iframe>
+      <div id="luau-resizer" class="resizer-top-right" title="드래그해서 크기 조절"></div>
+
+      <div class="luau-launcher-header">
+          <span>Luau 코드 테스트</span>
+          <button id="luau-close" type="button" title="닫기 (Esc)" aria-label="닫기">✕</button>
+      </div>
+
+      <div id="luau-frame-wrap" class="luau-launcher-body"></div>
   </div>
 
               </article>
@@ -855,6 +866,8 @@ dasdf</p>
     
     
       <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js"></script>
       
         <script src="../stylesheets/extra.js"></script>
       
