@@ -54,8 +54,11 @@ markdown_extensions:
   - pymdownx.superfences
   - admonition  # 경고/정보 박스 기능 (!!! info 같은 거 쓸 때 필요 ㅋ)
   - pymdownx.details # 접기/펴기 기능
+  - pymdownx.tabbed: # === "탭" 기능
+      alternate_style: true
 
 extra_javascript:
+  - https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js # 실행 버튼에서 코드 압축용
   - stylesheets/extra.js
 
 extra_css:
