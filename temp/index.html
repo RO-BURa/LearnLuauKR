@@ -17,7 +17,7 @@
       
       
       <link rel="icon" href="https://raw.githubusercontent.com/luau-lang/site/master/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -25,7 +25,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -848,6 +848,7 @@
               
               <article class="md-content__inner md-typeset">
                 
+  
                   
 
 
@@ -932,7 +933,7 @@
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nv">asdf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="c1">-- 숫자</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nv">dd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">-- 참 (boolean)</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nv">good</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="c1">-- 거짓 (boolean)</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nv">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;안녕 나는 문자열이야&quot;</span><span class="w"> </span><span class="c1">-- 문자</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nv">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"안녕 나는 문자열이야"</span><span class="w"> </span><span class="c1">-- 문자</span>
 </span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1">-- nil을 통해서 값을 지울수도 있음 (nil은 없다는 뜻이니깐)</span>
 </span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="nv">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="c1">-- 이제 hi는 없는거임</span>
 </span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="nv">good</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="c1">-- 이제 good은 없는거임</span>
@@ -1016,7 +1017,7 @@ not A에서 A가 (nil 또는 boolean)이면 true 아니면 false를 반환하는
 </span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="kc">nil</span><span class="w"> </span><span class="c1">-- true</span>
 </span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">-- false</span>
 </span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="kd">local</span><span class="w"> </span><span class="nv">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">not</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="c1">-- false</span>
-</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="kd">local</span><span class="w"> </span><span class="nv">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">not</span><span class="w"> </span><span class="s2">&quot;ㅎㅇ&quot;</span><span class="w"> </span><span class="c1">-- false</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="kd">local</span><span class="w"> </span><span class="nv">e</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">not</span><span class="w"> </span><span class="s2">"ㅎㅇ"</span><span class="w"> </span><span class="c1">-- false</span>
 </span></code></pre></div></p>
 <h2 id="_9">비교 연산자</h2>
 <p>비교연산자는 값을 서로 비교하고 boolean을 반환하는 문법임</p>
@@ -1033,7 +1034,7 @@ not A에서 A가 (nil 또는 boolean)이면 true 아니면 false를 반환하는
 다른 3개의 연산자에 not을 씌운걸 반환함</p>
 <h3 id="a-b">A == B</h3>
 <p>A와 B가 같으면 true 아니면 false
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;엉&quot;</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">&quot;엉&quot;</span><span class="w"> </span><span class="c1">-- true</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"엉"</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s2">"엉"</span><span class="w"> </span><span class="c1">-- true</span>
 </span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="c1">-- false</span>
 </span></code></pre></div></p>
 <h3 id="a-b_1">A ~= B</h3>
@@ -1083,6 +1084,19 @@ not (A &lt; B)와 같음
 
 
                 
+
+  <div id="luau-container" class="luau-launcher-container">
+      <!-- 오른쪽 위 조절 핸들 -->
+      <div id="luau-resizer" class="resizer-top-right"></div>
+      
+      <iframe src="https://play.luau.org/?embed=true&amp;theme=auto#code=N4IgbiBcBMA0IGMohPAzlUB7ADgFwEsBbAgLwENCsA7AGQFMx6AbKOEAE3oCMBXAcwZNWMAL6igA"
+              style="width: 100%; height: 100%;" 
+              loading="lazy"
+              allowfullscreen=""
+              allow="clipboard-write">
+      </iframe>
+  </div>
+
               </article>
             </div>
           
@@ -1128,7 +1142,9 @@ not (A &lt; B)와 같음
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../stylesheets/extra.js"></script>
       
     
   </body>

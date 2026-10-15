@@ -21,7 +21,7 @@
       
       
       <link rel="icon" href="https://raw.githubusercontent.com/luau-lang/site/master/logo.svg">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -29,7 +29,7 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
       
         
         <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
@@ -1512,6 +1512,7 @@
               
               <article class="md-content__inner md-typeset">
                 
+  
                   
 
 
@@ -1528,7 +1529,7 @@
 <h2 id="_2">테이블</h2>
 <p>테이블이란 이름표로 값을 저장하는 저장소 개념임</p>
 <p>이름표로 값을 저장해서 빼올수 있음</p>
-<p>그리고 이름표를 <strong>index(인덱스)</strong> 또는 <strong>key(키)</strong>라고 하고 값을 <strong>value(값)</strong>라고 함</p>
+<p>그리고 이름표를 <strong>index(인덱스)</strong> 또는 **key(키)**라고 하고 값을 **value(값)**라고 함</p>
 <p>먼저 테이블을 생성은 이렇게 할수있음
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{}</span>
 </span></code></pre></div></p>
@@ -1540,7 +1541,7 @@
 <p>예시:
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">-- 테이블 생성해서 변수에 저장하기</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">t</span><span class="p">[</span><span class="s2">&quot;이름표&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="c1">-- &quot;이름표&quot;에 30 저장</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nv">t</span><span class="p">[</span><span class="s2">"이름표"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="c1">-- "이름표"에 30 저장</span>
 </span></code></pre></div></p>
 <p>이름표로 값을 저장했으면 빼올수도 있어야함</p>
 <p>빼오는 문법은 다음과 같음</p>
@@ -1548,10 +1549,10 @@
 </span></code></pre></div>
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nv">t</span><span class="p">[</span><span class="s2">&quot;이름표&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="c1">-- 값 저장</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="nv">t</span><span class="p">[</span><span class="s2">"이름표"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="c1">-- 값 저장</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w"> </span><span class="c1">-- t[&quot;이름표&quot;]는 30임</span>
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nf">print</span><span class="p">(</span><span class="nv">t</span><span class="p">[</span><span class="s2">&quot;이름표&quot;</span><span class="p">])</span><span class="w"> </span><span class="c1">-- 값 빼와서 출력</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w"> </span><span class="c1">-- t["이름표"]는 30임</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="nf">print</span><span class="p">(</span><span class="nv">t</span><span class="p">[</span><span class="s2">"이름표"</span><span class="p">])</span><span class="w"> </span><span class="c1">-- 값 빼와서 출력</span>
 </span></code></pre></div>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>출력
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>30
@@ -1571,14 +1572,14 @@
 </span></code></pre></div>
 <p>테이블을 만들었을때 테이블의 내부 구조를 가상으로 그려보는것도 좋음
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">-- 고유번호를 A라고 가정</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">a</span><span class="p">[</span><span class="s2">&quot;hi&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nv">a</span><span class="p">[</span><span class="s2">&quot;good&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">60</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nv">a</span><span class="p">[</span><span class="s2">"hi"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nv">a</span><span class="p">[</span><span class="s2">"good"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">60</span>
 </span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="cm">--[[</span>
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="cm">A</span>
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="cm">순서|인덱스|값</span>
-</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="cm">1|&quot;hi&quot;|30</span>
-</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="cm">2|&quot;good&quot;|60</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="cm">1|"hi"|30</span>
+</span><span id="__span-8-9"><a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="cm">2|"good"|60</span>
 </span><span id="__span-8-10"><a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="cm">]]</span>
 </span></code></pre></div></p>
 <div class="admonition info">
@@ -1590,16 +1591,16 @@
 <p>테이블이 순환을하면 그걸 순환테이블이라고 부름
 예시는 다음과 같음
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">-- A</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">a</span><span class="p">[</span><span class="s2">&quot;hi&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nv">a</span><span class="p">[</span><span class="s2">&quot;asdf&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nv">a</span><span class="p">[</span><span class="s2">"hi"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nv">a</span><span class="p">[</span><span class="s2">"asdf"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">a</span>
 </span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="cm">--[[</span>
 </span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="cm">A</span>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="cm">순서|인덱스|값</span>
-</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="cm">1|&quot;hi&quot;|30</span>
-</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="cm">2|&quot;asdf&quot;|A</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="cm">1|"hi"|30</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="cm">2|"asdf"|A</span>
 </span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="cm">]]</span>
 </span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
-</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nf">print</span><span class="p">(</span><span class="nv">a</span><span class="p">[</span><span class="s2">&quot;asdf&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">a</span><span class="p">)</span><span class="w"> </span><span class="c1">-- a[&quot;asdf&quot;]와 a가 같으면 true 아니면 false</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="nf">print</span><span class="p">(</span><span class="nv">a</span><span class="p">[</span><span class="s2">"asdf"</span><span class="p">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nv">a</span><span class="p">)</span><span class="w"> </span><span class="c1">-- a["asdf"]와 a가 같으면 true 아니면 false</span>
 </span></code></pre></div></p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>출력
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>true
@@ -1614,27 +1615,27 @@
 </span></code></pre></div>
 <p>예시:
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="p">[</span><span class="s2">&quot;ㅎㅇ&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="w">    </span><span class="p">[</span><span class="s2">"ㅎㅇ"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="w">    </span><span class="p">[</span><span class="kc">true</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
 </span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">}</span><span class="w"> </span><span class="c1">-- A</span>
 </span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>
 </span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="cm">--[[</span>
 </span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="cm">A</span>
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="cm">순서|인덱스|값</span>
-</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="cm">1|&quot;ㅎㅇ&quot;|30</span>
+</span><span id="__span-12-9"><a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="cm">1|"ㅎㅇ"|30</span>
 </span><span id="__span-12-10"><a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="cm">2|true|10</span>
 </span><span id="__span-12-11"><a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a><span class="cm">]]</span>
 </span><span id="__span-12-12"><a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>
-</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="nf">print</span><span class="p">(</span><span class="nv">a</span><span class="p">[</span><span class="s2">&quot;ㅎㅇ&quot;</span><span class="p">])</span><span class="w"> </span><span class="c1">-- dd</span>
+</span><span id="__span-12-13"><a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a><span class="nf">print</span><span class="p">(</span><span class="nv">a</span><span class="p">[</span><span class="s2">"ㅎㅇ"</span><span class="p">])</span><span class="w"> </span><span class="c1">-- dd</span>
 </span></code></pre></div></p>
 <p>문자열의 경우 대괄호와 따옴표 없이 가능
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="c1">-- 변수 선언 규칙처럼 한국어나 그런건 안됨</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="c1">-- 안녕 = &quot;bob&quot;, -- 에러</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nv">bob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;hi&quot;</span><span class="p">,</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="w">    </span><span class="c1">-- 안녕 = "bob", -- 에러</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="w">    </span><span class="nv">bob</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"hi"</span><span class="p">,</span>
 </span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="p">}</span>
 </span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nf">print</span><span class="p">(</span><span class="nv">a</span><span class="p">[</span><span class="s2">&quot;bob&quot;</span><span class="p">])</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="nf">print</span><span class="p">(</span><span class="nv">a</span><span class="p">[</span><span class="s2">"bob"</span><span class="p">])</span>
 </span></code></pre></div></p>
 <h3 id="_7">특수 인덱싱</h3>
 <p>테이블에 특수하게 인덱싱할수있는 규칙이 여러개 있음</p>
@@ -1644,15 +1645,15 @@
 </span></code></pre></div>
 다음과 같은 방법으로 인덱싱 할수있음</p>
 <p>이는 밑에 코드와 같음
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="o">&lt;</span><span class="err">테이블</span><span class="o">&gt;</span><span class="p">[</span><span class="s2">&quot;&lt;문자열&gt;&quot;</span><span class="p">]</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="o">&lt;</span><span class="err">테이블</span><span class="o">&gt;</span><span class="p">[</span><span class="s2">"&lt;문자열&gt;"</span><span class="p">]</span>
 </span></code></pre></div></p>
 <p>예시:
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nv">t</span><span class="p">[</span><span class="s2">&quot;hi&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="c1">-- t[&quot;hi&quot;] = 30</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nv">t</span><span class="p">.</span><span class="nv">good</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="w"> </span><span class="c1">-- t[&quot;good&quot;] = 100</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="nv">t</span><span class="p">[</span><span class="s2">"hi"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="c1">-- t["hi"] = 30</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="nv">t</span><span class="p">.</span><span class="nv">good</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="w"> </span><span class="c1">-- t["good"] = 100</span>
 </span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nf">print</span><span class="p">(</span><span class="nv">t</span><span class="p">.</span><span class="nv">hi</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 30</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="nf">print</span><span class="p">(</span><span class="nv">t</span><span class="p">[</span><span class="s2">&quot;good&quot;</span><span class="p">])</span><span class="w"> </span><span class="c1">-- 100</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="nf">print</span><span class="p">(</span><span class="nv">t</span><span class="p">[</span><span class="s2">"good"</span><span class="p">])</span><span class="w"> </span><span class="c1">-- 100</span>
 </span></code></pre></div></p>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>출력
 </span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>30
@@ -1695,13 +1696,13 @@
 <p class="admonition-title">참고</p>
 <p>다른 언어는 0부터 배열하는데 Luau는 1부터 배열함</p>
 </div>
-<p><div class="language-luau highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">{</span><span class="s2">&quot;안녕&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">}</span>
+<p><div class="language-luau highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="p">{</span><span class="s2">"안녕"</span><span class="p">,</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">150</span><span class="p">}</span>
 </span></code></pre></div>
 Luau에서 저런식으로 테이블을 선언하면 다음과 같이 테이블이 생김</p>
 <p>Luau에서 저런식으로 배열된 테이블을 배열 라고 부름</p>
 <p>배열은 영어로 Array
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-23-1"><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="p">{</span>
-</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;안녕&quot;</span><span class="p">,</span>
+</span><span id="__span-23-2"><a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a><span class="w">    </span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"안녕"</span><span class="p">,</span>
 </span><span id="__span-23-3"><a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a><span class="w">    </span><span class="p">[</span><span class="mf">2</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span>
 </span><span id="__span-23-4"><a id="__codelineno-23-4" name="__codelineno-23-4" href="#__codelineno-23-4"></a><span class="w">    </span><span class="p">[</span><span class="mf">3</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">150</span><span class="p">,</span>
 </span><span id="__span-23-5"><a id="__codelineno-23-5" name="__codelineno-23-5" href="#__codelineno-23-5"></a><span class="p">}</span>
@@ -1710,7 +1711,7 @@ Luau에서 저런식으로 테이블을 선언하면 다음과 같이 테이블�
 <p>테이블에 사용할수있는 연산자</p>
 <h4 id="len">len</h4>
 <p>배열의 길이를 구할수있는 연산자임</p>
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">&quot;ㅎㅇ&quot;</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;엉 이건 문자열이야&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="p">}</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s2">"ㅎㅇ"</span><span class="p">,</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="mf">30</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"엉 이건 문자열이야"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">100</span><span class="p">,</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-24-2"><a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="nf">print</span><span class="p">(</span><span class="err">#</span><span class="nv">a</span><span class="p">)</span>
 </span></code></pre></div>
 <div class="language-text highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>출력
@@ -1740,26 +1741,26 @@ Luau에서 저런식으로 테이블을 선언하면 다음과 같이 테이블�
 <p><a href="https://create.roblox.com/docs/ko-kr/reference/engine/libraries/utf8">utf8 라이브러리</a></p>
 <h5 id="len_1">len</h5>
 <p>문자열의 바이트 길이를 반환함
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nb">string</span><span class="p">.</span><span class="nf">len</span><span class="p">(</span><span class="s2">&quot;asdf&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 4 (길이가 4임)</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nb">string</span><span class="p">.</span><span class="nf">len</span><span class="p">(</span><span class="s2">"asdf"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 4 (길이가 4임)</span>
 </span></code></pre></div></p>
 <p>바이트 길이를 반환하기 때문에 한글에 경우엔 3바이트를 차지함
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nb">string</span><span class="p">.</span><span class="nf">len</span><span class="p">(</span><span class="s2">&quot;한글&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 6 (한글 글자당 3바이트)</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nb">string</span><span class="p">.</span><span class="nf">len</span><span class="p">(</span><span class="s2">"한글"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 6 (한글 글자당 3바이트)</span>
 </span></code></pre></div></p>
 <h5 id="lower">lower</h5>
 <p>대문자를 소문자로 바꾼 문자열을 반환해줌</p>
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">string</span><span class="p">.</span><span class="nf">lower</span><span class="p">(</span><span class="s2">&quot;ASDF&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- &quot;asdf&quot;</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nb">string</span><span class="p">.</span><span class="nf">lower</span><span class="p">(</span><span class="s2">&quot;ㄲ&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- &quot;ㄲ&quot; (당연하지만 영어만 지원)</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="nb">string</span><span class="p">.</span><span class="nf">lower</span><span class="p">(</span><span class="s2">"ASDF"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- "asdf"</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a><span class="nb">string</span><span class="p">.</span><span class="nf">lower</span><span class="p">(</span><span class="s2">"ㄲ"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- "ㄲ" (당연하지만 영어만 지원)</span>
 </span></code></pre></div>
 <h5 id="upper">upper</h5>
 <p>소문자를 대문자로 바꾼 문자열을 반환해줌</p>
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nb">string</span><span class="p">.</span><span class="nf">lower</span><span class="p">(</span><span class="s2">&quot;asdF&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- &quot;ASDF&quot;</span>
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="nb">string</span><span class="p">.</span><span class="nf">lower</span><span class="p">(</span><span class="s2">&quot;ㄱ&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- &quot;ㄱ&quot; (당연하지만 영어만 지원)</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nb">string</span><span class="p">.</span><span class="nf">lower</span><span class="p">(</span><span class="s2">"asdF"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- "ASDF"</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="nb">string</span><span class="p">.</span><span class="nf">lower</span><span class="p">(</span><span class="s2">"ㄱ"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- "ㄱ" (당연하지만 영어만 지원)</span>
 </span></code></pre></div>
 <h5 id="split">split</h5>
 <p>문자를 기준으로 나눈 배열를 반환함</p>
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="c1">-- string.split(문자열, 기준)</span>
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">string</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;asdf, bob, good&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;, &quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- { &quot;asdf&quot;, &quot;bob&quot;, &quot;good&quot; }</span>
-</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">dd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">string</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s2">&quot;hello&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- { &quot;h&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot; }</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="kd">local</span><span class="w"> </span><span class="nv">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">string</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s2">"asdf, bob, good"</span><span class="p">,</span><span class="w"> </span><span class="s2">", "</span><span class="p">)</span><span class="w"> </span><span class="c1">-- { "asdf", "bob", "good" }</span>
+</span><span id="__span-32-3"><a id="__codelineno-32-3" name="__codelineno-32-3" href="#__codelineno-32-3"></a><span class="kd">local</span><span class="w"> </span><span class="nv">dd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">string</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">,</span><span class="w"> </span><span class="s2">""</span><span class="p">)</span><span class="w"> </span><span class="c1">-- { "h", "e", "l", "l", "o" }</span>
 </span></code></pre></div>
 <h4 id="table">table</h4>
 <p>테이블에 사용할수있는 편의기능들이 있으며</p>
@@ -1768,15 +1769,15 @@ Luau에서 저런식으로 테이블을 선언하면 다음과 같이 테이블�
 <p><a href="https://create.roblox.com/docs/ko-kr/reference/engine/libraries/table">table 라이브러리</a></p>
 <h5 id="clear">clear</h5>
 <p>테이블의 모든 키의 값을 nil로 설정함</p>
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">asdf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="s2">&quot;dasdf&quot;</span><span class="p">,</span><span class="mf">300</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">80</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;ㅇ&quot;</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="p">}</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">asdf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="s2">"dasdf"</span><span class="p">,</span><span class="mf">300</span><span class="p">,</span><span class="mf">2</span><span class="p">,</span><span class="mf">80</span><span class="p">,</span><span class="w"> </span><span class="p">[</span><span class="s2">"ㅇ"</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="p">}</span>
 </span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a>
 </span><span id="__span-33-3"><a id="__codelineno-33-3" name="__codelineno-33-3" href="#__codelineno-33-3"></a><span class="nf">print</span><span class="p">(</span><span class="nv">asdf</span><span class="p">[</span><span class="mf">3</span><span class="p">])</span><span class="w"> </span><span class="c1">-- 300</span>
-</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="nf">print</span><span class="p">(</span><span class="nv">asdf</span><span class="p">[</span><span class="s2">&quot;ㅇ&quot;</span><span class="p">])</span><span class="w"> </span><span class="c1">-- 30</span>
+</span><span id="__span-33-4"><a id="__codelineno-33-4" name="__codelineno-33-4" href="#__codelineno-33-4"></a><span class="nf">print</span><span class="p">(</span><span class="nv">asdf</span><span class="p">[</span><span class="s2">"ㅇ"</span><span class="p">])</span><span class="w"> </span><span class="c1">-- 30</span>
 </span><span id="__span-33-5"><a id="__codelineno-33-5" name="__codelineno-33-5" href="#__codelineno-33-5"></a>
 </span><span id="__span-33-6"><a id="__codelineno-33-6" name="__codelineno-33-6" href="#__codelineno-33-6"></a><span class="nb">table</span><span class="p">.</span><span class="nf">clear</span><span class="p">(</span><span class="nv">asdf</span><span class="p">)</span>
 </span><span id="__span-33-7"><a id="__codelineno-33-7" name="__codelineno-33-7" href="#__codelineno-33-7"></a>
 </span><span id="__span-33-8"><a id="__codelineno-33-8" name="__codelineno-33-8" href="#__codelineno-33-8"></a><span class="nf">print</span><span class="p">(</span><span class="nv">asdf</span><span class="p">[</span><span class="mf">3</span><span class="p">])</span><span class="w"> </span><span class="c1">-- nil</span>
-</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="nf">print</span><span class="p">(</span><span class="nv">asdf</span><span class="p">[</span><span class="s2">&quot;ㅇ&quot;</span><span class="p">])</span><span class="w"> </span><span class="c1">-- nil</span>
+</span><span id="__span-33-9"><a id="__codelineno-33-9" name="__codelineno-33-9" href="#__codelineno-33-9"></a><span class="nf">print</span><span class="p">(</span><span class="nv">asdf</span><span class="p">[</span><span class="s2">"ㅇ"</span><span class="p">])</span><span class="w"> </span><span class="c1">-- nil</span>
 </span></code></pre></div>
 <h5 id="clone">clone</h5>
 <p>같은 키와 값을가진 다른 테이블을 생성함 (복사)</p>
@@ -1797,7 +1798,7 @@ Luau에서 저런식으로 테이블을 선언하면 다음과 같이 테이블�
 </span></code></pre></div>
 <h5 id="create">create</h5>
 <p>값으로 꽉채운 배열를 반환함</p>
-<div class="language-luau highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nb">table</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ㅎㅇ&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- { &quot;ㅎㅇ&quot;, &quot;ㅎㅇ&quot;, ... &quot;ㅎㅇ&quot; } (&quot;ㅎㅇ&quot;가 10개)</span>
+<div class="language-luau highlight"><pre><span></span><code><span id="__span-36-1"><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="nb">table</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="s2">"ㅎㅇ"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- { "ㅎㅇ", "ㅎㅇ", ... "ㅎㅇ" } ("ㅎㅇ"가 10개)</span>
 </span></code></pre></div>
 <h5 id="freeze">freeze</h5>
 <p>테이블을 읽기 전용으로 만듬</p>
@@ -1813,26 +1814,26 @@ Luau에서 저런식으로 테이블을 선언하면 다음과 같이 테이블�
 <div class="language-luau highlight"><pre><span></span><code><span id="__span-38-1"><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a><span class="kd">local</span><span class="w"> </span><span class="nv">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{}</span><span class="w"> </span><span class="c1">-- T</span>
 </span><span id="__span-38-2"><a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>
 </span><span id="__span-38-3"><a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a><span class="c1">-- 배열 마지막에 값 추가</span>
-</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="nb">table</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="nv">t</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;ㅎㅇ&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- t[1] = &quot;ㅎㅇ&quot;</span>
+</span><span id="__span-38-4"><a id="__codelineno-38-4" name="__codelineno-38-4" href="#__codelineno-38-4"></a><span class="nb">table</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="nv">t</span><span class="p">,</span><span class="w"> </span><span class="s2">"ㅎㅇ"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- t[1] = "ㅎㅇ"</span>
 </span><span id="__span-38-5"><a id="__codelineno-38-5" name="__codelineno-38-5" href="#__codelineno-38-5"></a><span class="nb">table</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="nv">t</span><span class="p">,</span><span class="w"> </span><span class="mf">2222</span><span class="p">)</span><span class="w"> </span><span class="c1">-- t[2] = 2222</span>
 </span><span id="__span-38-6"><a id="__codelineno-38-6" name="__codelineno-38-6" href="#__codelineno-38-6"></a>
 </span><span id="__span-38-7"><a id="__codelineno-38-7" name="__codelineno-38-7" href="#__codelineno-38-7"></a><span class="cm">--[[</span>
 </span><span id="__span-38-8"><a id="__codelineno-38-8" name="__codelineno-38-8" href="#__codelineno-38-8"></a><span class="cm">T</span>
 </span><span id="__span-38-9"><a id="__codelineno-38-9" name="__codelineno-38-9" href="#__codelineno-38-9"></a><span class="cm">순서|인덱스|값</span>
-</span><span id="__span-38-10"><a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="cm">1|1|&quot;ㅎㅇ&quot;</span>
+</span><span id="__span-38-10"><a id="__codelineno-38-10" name="__codelineno-38-10" href="#__codelineno-38-10"></a><span class="cm">1|1|"ㅎㅇ"</span>
 </span><span id="__span-38-11"><a id="__codelineno-38-11" name="__codelineno-38-11" href="#__codelineno-38-11"></a><span class="cm">2|2|2222</span>
 </span><span id="__span-38-12"><a id="__codelineno-38-12" name="__codelineno-38-12" href="#__codelineno-38-12"></a><span class="cm">]]</span>
 </span><span id="__span-38-13"><a id="__codelineno-38-13" name="__codelineno-38-13" href="#__codelineno-38-13"></a>
 </span><span id="__span-38-14"><a id="__codelineno-38-14" name="__codelineno-38-14" href="#__codelineno-38-14"></a><span class="c1">-- 다른 케이스도 있음</span>
 </span><span id="__span-38-15"><a id="__codelineno-38-15" name="__codelineno-38-15" href="#__codelineno-38-15"></a><span class="c1">-- table.insert(테이블, 인덱스, 값)</span>
 </span><span id="__span-38-16"><a id="__codelineno-38-16" name="__codelineno-38-16" href="#__codelineno-38-16"></a><span class="c1">-- 배열에 인덱스에 값을 추가하고 뒤에있는 값을 뒤로 미룸</span>
-</span><span id="__span-38-17"><a id="__codelineno-38-17" name="__codelineno-38-17" href="#__codelineno-38-17"></a><span class="nb">table</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="nv">t</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;엉&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 배열 t에 2번째 값에 &quot;엉&quot;을 추가하고 뒤의 값을 뒤로 미룸</span>
+</span><span id="__span-38-17"><a id="__codelineno-38-17" name="__codelineno-38-17" href="#__codelineno-38-17"></a><span class="nb">table</span><span class="p">.</span><span class="nf">insert</span><span class="p">(</span><span class="nv">t</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">,</span><span class="w"> </span><span class="s2">"엉"</span><span class="p">)</span><span class="w"> </span><span class="c1">-- 배열 t에 2번째 값에 "엉"을 추가하고 뒤의 값을 뒤로 미룸</span>
 </span><span id="__span-38-18"><a id="__codelineno-38-18" name="__codelineno-38-18" href="#__codelineno-38-18"></a>
 </span><span id="__span-38-19"><a id="__codelineno-38-19" name="__codelineno-38-19" href="#__codelineno-38-19"></a><span class="cm">--[[</span>
 </span><span id="__span-38-20"><a id="__codelineno-38-20" name="__codelineno-38-20" href="#__codelineno-38-20"></a><span class="cm">T</span>
 </span><span id="__span-38-21"><a id="__codelineno-38-21" name="__codelineno-38-21" href="#__codelineno-38-21"></a><span class="cm">순서|인덱스|값</span>
-</span><span id="__span-38-22"><a id="__codelineno-38-22" name="__codelineno-38-22" href="#__codelineno-38-22"></a><span class="cm">1|1|&quot;ㅎㅇ&quot;</span>
-</span><span id="__span-38-23"><a id="__codelineno-38-23" name="__codelineno-38-23" href="#__codelineno-38-23"></a><span class="cm">2|2|&quot;엉&quot;</span>
+</span><span id="__span-38-22"><a id="__codelineno-38-22" name="__codelineno-38-22" href="#__codelineno-38-22"></a><span class="cm">1|1|"ㅎㅇ"</span>
+</span><span id="__span-38-23"><a id="__codelineno-38-23" name="__codelineno-38-23" href="#__codelineno-38-23"></a><span class="cm">2|2|"엉"</span>
 </span><span id="__span-38-24"><a id="__codelineno-38-24" name="__codelineno-38-24" href="#__codelineno-38-24"></a><span class="cm">3|3|2222</span>
 </span><span id="__span-38-25"><a id="__codelineno-38-25" name="__codelineno-38-25" href="#__codelineno-38-25"></a><span class="cm">]]</span>
 </span></code></pre></div>
@@ -1897,6 +1898,19 @@ Luau에서 저런식으로 테이블을 선언하면 다음과 같이 테이블�
 
 
                 
+
+  <div id="luau-container" class="luau-launcher-container">
+      <!-- 오른쪽 위 조절 핸들 -->
+      <div id="luau-resizer" class="resizer-top-right"></div>
+      
+      <iframe src="https://play.luau.org/?embed=true&amp;theme=auto#code=N4IgbiBcBMA0IGMohPAzlUB7ADgFwEsBbAgLwENCsA7AGQFMx6AbKOEAE3oCMBXAcwZNWMAL6igA"
+              style="width: 100%; height: 100%;" 
+              loading="lazy"
+              allowfullscreen=""
+              allow="clipboard-write">
+      </iframe>
+  </div>
+
               </article>
             </div>
           
@@ -1942,7 +1956,9 @@ Luau에서 저런식으로 테이블을 선언하면 다음과 같이 테이블�
       <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.top", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\ud074\ub9bd\ubcf4\ub4dc\uc5d0 \ubcf5\uc0ac\ub428", "clipboard.copy": "\ud074\ub9bd\ubcf4\ub4dc\ub85c \ubcf5\uc0ac", "search.result.more.one": "\uc774 \ubb38\uc11c\uc5d0\uc11c 1\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.more.other": "\uc774 \ubb38\uc11c\uc5d0\uc11c #\uac1c\uc758 \uac80\uc0c9 \uacb0\uacfc \ub354 \ubcf4\uae30", "search.result.none": "\uac80\uc0c9\uc5b4\uc640 \uc77c\uce58\ud558\ub294 \ubb38\uc11c\uac00 \uc5c6\uc2b5\ub2c8\ub2e4", "search.result.one": "1\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.other": "#\uac1c\uc758 \uc77c\uce58\ud558\ub294 \ubb38\uc11c", "search.result.placeholder": "\uac80\uc0c9\uc5b4\ub97c \uc785\ub825\ud558\uc138\uc694", "search.result.term.missing": "\ud3ec\ud568\ub418\uc9c0 \uc54a\uc740 \uac80\uc0c9\uc5b4", "select.version": "\ubc84\uc804 \uc120\ud0dd"}, "version": null}</script>
     
     
-      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../stylesheets/extra.js"></script>
       
     
   </body>
